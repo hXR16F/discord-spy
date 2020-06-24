@@ -15,12 +15,12 @@ if not defined person (
 		'tasklist /v ^| findstr /i /c:"discord"'
 	) do (
 		for /f "tokens=1 delims= " %%j in ("%%i") do (
-			set "server=%%j"
-			echo [discord-spy] Channel you've visited recently !server!.
+			set "channel=%%j"
+			echo [discord-spy] Channel you've visited recently: !channel!.
 		)
 	)
 )
 
-if not defined person if not defined server echo [discord-spy] Cannot find person/channel.
+if not defined person if not defined channel echo [discord-spy] Cannot find person/channel.
 
 pause
